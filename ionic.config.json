@@ -1,0 +1,7 @@
+{
+  "name": "integrate-FRT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
