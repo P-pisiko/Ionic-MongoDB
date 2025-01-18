@@ -5,13 +5,28 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+<form>
+  <ion-item>
+    <ion-label position="stacked">Course Number</ion-label>
+    <ion-input required type="text" [(ngModel)]="cId" name="cId">
+    </ion-input>
+  </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-label position="stacked">Day</ion-label>
+    <ion-input [(ngModel)]="wDay" name="wDay"></ion-input>
+  </ion-item>
+  <ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-label position="stacked">Professor</ion-label>
+    <ion-input [(ngModel)]="prof" name="prof"></ion-input>
+  </ion-item>
+
+  <ion-button type="submit" (click)="insert()">Add Course</ion-button>
+  <ion-button type="submit" (click)="retrieve()">Retrieve Course by number</ion-button>
+  
+</form>
+{{outMsg}}
+<li *ngFor="let i of outRec">{{i.cid}} {{i.wday}} {{i.prof}}</li>
 </ion-content>
